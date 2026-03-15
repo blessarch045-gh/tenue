@@ -1,0 +1,47 @@
+# tenue プロジェクト
+
+毎日のコーデを記録するiPhoneアプリ。ミッション：服と、人と、その日を残す。
+React Native + Expo (SDK 54) / TypeScript / Supabase
+
+## 現在のステータス
+- Phase 0 環境構築 ✅
+- Phase 1 MVP開発 ✅（全6画面＋微調整完了・実機動作確認済み）
+- マーケティング基盤 ✅（Instagram・X開設、初期投稿9件完了）
+- Instagram成長フェーズ 🔄（0→100フォロワー獲得中）
+- Phase 2 βテスト準備 🔲
+- Phase 3 リリース 🔲
+
+## 次にやること（優先順）
+1. Instagram週次運用開始（リール週3本＋カルーセル週1〜2本）
+2. フォロワー100人獲得（3ヶ月目標）
+3. Apple Developer Program登録（年99ドル）
+4. βテスト（TestFlight配布＋フィードバック収集）
+5. デザインブラッシュアップ（βフィードバック反映）
+6. App Store申請・公開
+7. マンガ第1話投稿（リリース告知と同時）
+
+## ファイルマップ
+| 内容 | 場所 |
+|------|------|
+| アプリソースコード | src/ |
+| Supabase接続情報 | .env |
+| 技術設計（DB・画面・スタック） | docs/技術設計.md |
+| ブランド（カラー・フォント・コピー） | docs/ブランド.md |
+| マーケティング（SNS運用・方針） | docs/マーケティング.md |
+| Instagram戦略書 | docs/マーケティング/tenue_Instagram戦略_100フォロワー.docx |
+| Instagram実行管理シート | docs/マーケティング/tenue_Instagram実行管理シート.xlsx |
+| 市場調査レポート | docs/マーケティング/*.md |
+| 投稿コンテンツ（Googleドライブ） | tenue_Instagram/ フォルダ |
+| 投稿コンテンツ（ローカル） | Instagram/tenue/マーケティング/Instagram/ |
+
+## 開発ルール
+- MVPスコープ外の機能は作らない
+- 画面は6画面固定
+- カラーは src/constants/colors.ts で一元管理
+- エラーメッセージは日本語
+- 画像はアップロード時にquality 0.7・長辺1200pxで圧縮
+- 詳細は docs/ 内の各ファイルを参照
+
+## Cowork活用方針
+- **自動化する**: コンテンツ企画、キャプション生成、画像プロンプト作成、分析レポート
+- **手動でやる**: Instagram投稿（Googleドライブから画像取得→投稿）
