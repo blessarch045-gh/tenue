@@ -6,9 +6,9 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 ## 現在のステータス
 - Phase 0 環境構築 ✅
 - Phase 1 MVP開発 ✅（全6画面＋微調整完了・実機動作確認済み）
-- マーケティング基盤 ✅（Instagram開設・初期投稿9件完了）
+- マーケティング基盤 ✅（Instagram・X開設、初期投稿9件完了）
 - Instagram成長フェーズ 🔄（0→100フォロワー獲得中）
-- X開設 🔲（準備中）
+- X開設 🔲（初期投稿5件の準備完了・開設待ち）
 - YouTube 🔲（βリリース時に展開）
 - Phase 2 βテスト準備 🔲
 - Phase 3 リリース 🔲
@@ -36,7 +36,8 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 | Instagram実行管理シート | docs/マーケティング/tenue_Instagram実行管理シート.xlsx |
 | 市場調査レポート | docs/マーケティング/*.md |
 | 投稿コンテンツ（Googleドライブ） | tenue_Instagram/ フォルダ |
-| 投稿コンテンツ（ローカル） | Instagram/tenue/マーケティング/Instagram/ |
+| 投稿コンテンツ・Instagram（ローカル） | Instagram/tenue/マーケティング/Instagram/ |
+| 投稿コンテンツ・X（ローカル） | Instagram/tenue/マーケティング/X/ |
 
 ## 開発ルール
 - MVPスコープ外の機能は作らない
