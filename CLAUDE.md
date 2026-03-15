@@ -8,7 +8,7 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 - Phase 1 MVP開発 ✅（全6画面＋微調整完了・実機動作確認済み）
 - マーケティング基盤 ✅（Instagram・X開設、初期投稿9件完了）
 - Instagram成長フェーズ 🔄（0→100フォロワー獲得中）
-- X開設 🔲（初期投稿5件の準備完了・開設待ち）
+- X開設 ✅（@tenue_app・初期投稿5件の準備完了）
 - YouTube 🔲（βリリース時に展開）
 - Phase 2 βテスト準備 🔲
 - Phase 3 リリース 🔲
