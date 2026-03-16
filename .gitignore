@@ -43,3 +43,6 @@ yarn-error.*
 
 # Claude Code
 .claude/
+
+# Notion scripts (contains API tokens)
+notion_setup.js
