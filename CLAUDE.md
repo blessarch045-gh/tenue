@@ -14,8 +14,8 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 - Phase 3 リリース 🔲
 
 ## 次にやること（優先順）
-1. Instagram週次運用（リール週3本＋カルーセル週1〜2本）
-2. Xアカウント開設・初期投稿5件・RT運用開始
+1. Instagram週次運用（リール週3本＋カルーセル週1〜2本）＋5-3-1ルール毎日実行
+2. X初期投稿5件を投稿・毎日リプライ10〜15件開始
 3. Instagram＋X フォロワー各100人獲得（3ヶ月目標）
 4. Apple Developer Program登録（年99ドル）※βテスト前までに
 5. βテスト（TestFlight配布＋フィードバック収集）
