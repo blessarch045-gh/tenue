@@ -68,31 +68,38 @@ def generate(prompt: str, output_path: str, aspect: str = "1:1", count: int = 1)
     print(f"プロンプト: {prompt[:60]}...")
     print(f"アスペクト比: {aspect_ratio}, 枚数: {count}")
 
-    result = client.models.generate_images(
-        model="imagen-3.0-generate-001",
-        prompt=full_prompt,
-        config=types.GenerateImagesConfig(
-            number_of_images=count,
-            aspect_ratio=aspect_ratio,
-            output_mime_type="image/png",
+    # gemini-2.5-flash-image は generateContent で画像を返す
+    response = client.models.generate_content(
+        model="gemini-2.5-flash-image",
+        contents=full_prompt,
+        config=types.GenerateContentConfig(
+            response_modalities=["IMAGE", "TEXT"],
         ),
     )
 
-    if not result.generated_images:
+    # 画像パーツを抽出
+    image_parts = [
+        part for part in response.candidates[0].content.parts
+        if part.inline_data is not None
+    ]
+
+    if not image_parts:
         print("ERROR: 画像が生成されませんでした。プロンプトを変えて再試行してください。")
         sys.exit(1)
 
+    # count 指定の場合は複数回呼ぶ設計だが、1回1枚が基本
     saved = []
-    for i, img in enumerate(result.generated_images):
-        if count == 1:
+    for i, part in enumerate(image_parts):
+        if count == 1 or len(image_parts) == 1:
             path = Path(output_path)
         else:
-            # 複数枚の場合: output_path のstemに _1, _2 ... を付与
             p = Path(output_path)
             path = p.parent / f"{p.stem}_{i+1}{p.suffix}"
 
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(img.image.image_bytes)
+        import base64
+        image_bytes = base64.b64decode(part.inline_data.data)
+        path.write_bytes(image_bytes)
         size_kb = path.stat().st_size // 1024
         print(f"✅ 保存完了: {path} ({size_kb}KB)")
         saved.append(str(path))
