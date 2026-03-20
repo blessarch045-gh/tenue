@@ -8,21 +8,19 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 - Phase 1 MVP開発 ✅（全6画面＋微調整完了・実機動作確認済み）
 - マーケティング基盤 ✅（Instagram・X開設、初期投稿9件完了）
 - Instagram成長フェーズ 🔄（0→100フォロワー獲得中）
-- X開設 ✅（@tenue_app・初期投稿5件の準備完了）
+- X成長フェーズ 🔄（@tenue_app・初期投稿5件投稿済み・毎日リプライ運用中）
 - YouTube 🔲（βリリース時に展開）
 - Phase 2 βテスト準備 🔲
 - Phase 3 リリース 🔲
 
 ## 次にやること（優先順）
-1. Instagram週次運用（リール週3本＋カルーセル週1〜2本）＋5-3-1ルール毎日実行
-2. X初期投稿5件を投稿・毎日リプライ10〜15件開始
-3. Instagram＋X フォロワー各100人獲得（3ヶ月目標）
-4. Apple Developer Program登録（年99ドル）※βテスト前までに
-5. βテスト（TestFlight配布＋フィードバック収集）
-6. YouTubeチャンネル開設・ショート動画投稿（βリリースに合わせて）
-7. デザインブラッシュアップ（βフィードバック反映）
-8. App Store申請・公開
-9. マンガ第1話投稿（リリース告知と同時）
+1. Instagram・X フォロワー獲得フェーズ（各100人・3ヶ月目標）
+2. Apple Developer Program登録（年99ドル）※βテスト前までに
+3. βテスト（TestFlight配布＋フィードバック収集）
+4. YouTubeチャンネル開設・ショート動画投稿（βリリースに合わせて）
+5. デザインブラッシュアップ（βフィードバック反映）
+6. App Store申請・公開
+7. マンガ第1話投稿（リリース告知と同時）
 
 ## ファイルマップ
 | 内容 | 場所 |
@@ -36,8 +34,14 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 | Instagram実行管理シート | docs/マーケティング/tenue_Instagram実行管理シート.xlsx |
 | 市場調査レポート | docs/マーケティング/*.md |
 | 投稿コンテンツ（Googleドライブ） | tenue_Instagram/ フォルダ |
-| 投稿コンテンツ・Instagram（ローカル） | Instagram/tenue/マーケティング/Instagram/ |
-| 投稿コンテンツ・X（ローカル） | Instagram/tenue/マーケティング/X/ |
+| 投稿コンテンツ・Instagram（ローカル） | マーケティング/Instagram/ |
+| 投稿コンテンツ・X（ローカル） | マーケティング/X/ |
+
+## スキル（定型作業の実行手順書）
+| スキル | トリガー | ファイル |
+|--------|---------|---------|
+| Instagram投稿用画像をGeminiで生成 | 「画像作って」「今週の画像を作って」 | docs/スキル/スキル_Gemini画像作成.md |
+| Xリプライ候補を出して投稿 | 「今日のXリプライやって」 | docs/スキル/スキル_Xリプライ.md |
 
 ## 開発ルール
 - MVPスコープ外の機能は作らない
