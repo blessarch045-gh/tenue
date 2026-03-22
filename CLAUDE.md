@@ -1,47 +1,85 @@
-# tenue プロジェクト
+# tenue - CLAUDE.md
 
-毎日のコーデを記録するiPhoneアプリ。ミッション：服と、人と、その日を残す。
-React Native + Expo (SDK 54) / TypeScript / Supabase
+## このファイルの役割
+Claude がプロジェクト作業時に従うルールと現状。
 
----
+## プロジェクト概要
+- tenue: 服と、人と、その日を残す。ファッションコーデ記録iOSアプリ
+- Tech: React Native + Expo SDK 54 / TypeScript / Supabase
+- ソロ開発（Bless）
 
-## ステータス
-
-| フェーズ | 状態 |
-|---------|------|
-| Phase 1 MVP開発 | ✅ 完了（全6画面・実機確認済み） |
-| Instagram 0→100フォロワー | 🔄 進行中 |
-| X 0→100フォロワー | 🔄 進行中 |
-| Apple Developer Program登録 | 🔲 βテスト前までに（年$99） |
-| Phase 2 βテスト | 🔲 未着手 |
-| Phase 3 リリース | 🔲 未着手 |
+## 現在のフェーズ
+MVP完成 → SNSフォロワー獲得中（TestFlight準備前）
 
 ---
 
-## 今やること（優先順）
+## プロジェクト状態管理ルール
 
-1. Instagram週次投稿（リール週3本・カルーセル週1〜2本）＋毎日5-3-1ルール
-2. X毎日リプライ10〜15件
-3. Instagram・X 各100フォロワー達成（3ヶ月目標）
-4. Apple Developer Program登録
+全ての Claude セッション（Code / Chat / スケジュールタスク）は以下を守ること：
+
+### セッション開始時
+1. `.project/status.md` を読んで現在の状態を把握する
+2. `.project/weekly-goals.md` を読んで今週の優先事項を把握する
+3. `.project/pending.md` を読んで判断待ち事項を確認する
+
+### セッション中
+- 作業は weekly-goals.md のゴールに沿って優先度を判断する
+- Bless の判断が必要な事項は pending.md に追記する
+- 自分で判断できる範囲で status.md を更新する
+
+### セッション終了時
+- `.project/log.md` に作業内容を追記する
+- status.md に状態変化があれば更新する
 
 ---
 
-## ファイルマップ（実在パス）
+## 司令塔プロトコル
 
-| 内容 | パス |
-|------|------|
-| アプリソースコード | `src/` |
-| 環境変数（Supabase・Gemini APIキー） | `.env` ※gitignore済み |
-| 技術設計 | `docs/技術設計.md` |
-| ブランド（カラー・フォント・コピー） | `docs/ブランド.md` |
-| SNS運用方針 | `docs/マーケティング.md` |
-| X戦略ドキュメント | `docs/マーケティング/` |
-| Instagram戦略書 | `マーケティング/tenue_Instagram戦略_100フォロワー.docx` |
-| Instagram投稿予定ファイル | `マーケティング/Instagram/投稿予定_[期間].md` |
-| Instagram生成済み画像 | `マーケティング/Instagram/画像/` |
-| X投稿コンテンツ | `マーケティング/X/` |
-| 画像生成スクリプト（API課金後に使用） | `tools/generate_image.py` |
+Bless が「今日はどうなってる」「状況報告」「ブリーフィング」
+などプロジェクト全体の状況を聞いた場合、以下を実行する。
+
+### Phase 1: 情報収集（自動・報告前に完了させる）
+1. `.project/status.md` を読む
+2. `.project/weekly-goals.md` を読む
+3. `.project/pending.md` を読む
+4. `.project/log.md` の直近3日分を読む
+5. GitHub の未マージPR・未解決Issueを確認する
+6. `docs/drafts/` の未レビュー下書きを確認する
+7. `npm audit` / `npx tsc --noEmit` を実行する
+8. `docs/` と コードの整合性を簡易チェックする
+
+### Phase 2: ブリーフィング報告
+以下のフォーマットで報告する：
+
+📋 デイリーブリーフィング YYYY-MM-DD
+- 🔔 昨日〜今朝の動き
+- 📊 プロジェクト全体の状態
+- ✅ 今日やるべきこと（🤖 自動実行できる / 👤 Bless の判断・作業が必要）
+
+### Phase 3: 自動実行
+Bless が「進めて」「OK」など承認の意思を示したら、
+🤖 マークの作業を全て実行する。実行中は進捗を随時報告する。
+
+### Phase 4: 状態更新
+全作業完了後、log.md / status.md / weekly-goals.md / pending.md を更新する。
+
+---
+
+## 作業前の必読ルール
+
+以下の条件に該当する作業を始める前に、対応するファイルを読み込むこと。
+読み込み後、何を参照したかと注意点を作業開始前に報告すること。
+
+| 作業の種類 | 読むファイル |
+|-----------|------------|
+| コード作業全般 | `docs/技術設計.md` |
+| UI文言の作成・修正 | `docs/ブランド.md` |
+| SNS投稿・コピー | `docs/マーケティング.md` + `docs/ブランド.md` |
+| ストア掲載文・README | `docs/ブランド.md` |
+| Instagram画像生成 | `docs/スキル/スキル_Gemini画像作成.md` |
+| Xリプライ作成 | `docs/スキル/スキル_Xリプライ.md` |
+
+参照不要: パッケージ更新、Lint修正、設定ファイル変更
 
 ---
 
@@ -53,8 +91,6 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 |---------|-----------|-------------|
 | Instagram投稿用画像を生成・保存 | 「画像作って」「今週の画像を作って」 | `docs/スキル/スキル_Gemini画像作成.md` |
 | Xリプライ候補を出す・投稿 | 「今日のXリプライやって」「Xリプライ」 | `docs/スキル/スキル_Xリプライ.md` |
-
----
 
 ## 画像生成ワークフロー（現行）
 
@@ -71,7 +107,7 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 ---
 
 ## AI行動ルール
-- 日本語かつエンジニア以外の人にわかるように簡潔にわかりやすく確認してください
+- 日本語かつエンジニア以外の人にわかるように簡潔にわかりやすく確認する
 - 複雑なタスクは作業前に計画を提示し、承認後に着手する
 - 単純な作業での承認は可能な限り、オートで承認確認を発生させない
 
@@ -85,6 +121,10 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 - 新規ファイル・フォルダの大量作成
 - 既存ファイルの削除
 
+### 単純確認はボタンで行う
+「済み」「完了」「次へ」「OK」など、Yes/Noや進行確認だけが必要な場面では
+**AskUserQuestion ツールで選択肢ボタンを表示する**。
+
 ### 即ストップ・報告する条件
 - ブラウザ操作が2手順以上詰まったとき
 - 金銭・課金・支払いが発生する画面が出たとき
@@ -92,9 +132,39 @@ React Native + Expo (SDK 54) / TypeScript / Supabase
 
 ---
 
-## 開発ルール
+## 作業ルール
+- コード変更前に必ず影響範囲を説明し、確認を取る
+- 新しいパッケージ追加時は理由を明示する
+- コミットメッセージは日本語、prefix付き（feat: / fix: / docs:）
 
-- MVPスコープ外の機能は作らない（画面は6画面固定）
+## コードスタイル
+- 関数コンポーネント + hooks
+- スタイルは StyleSheet.create を使用
+- 型定義は `src/types/` に集約
 - カラーは `src/constants/colors.ts` で一元管理
+
+## 開発ルール
+- MVPスコープ外の機能は作らない（画面は6画面固定）
 - エラーメッセージは日本語
 - 画像アップロード時: quality 0.7・長辺1200pxで圧縮
+
+---
+
+## ファイルマップ
+
+| 内容 | パス |
+|------|------|
+| プロジェクト状態管理 | `.project/`（status.md, log.md, pending.md, weekly-goals.md） |
+| アプリソースコード | `src/` |
+| 環境変数 | `.env` ※gitignore済み |
+| 技術設計 | `docs/技術設計.md` |
+| ブランド | `docs/ブランド.md` |
+| SNS運用方針 | `docs/マーケティング.md` |
+| X戦略ドキュメント | `docs/マーケティング/` |
+| スキル定義 | `docs/スキル/` |
+| SNS日次下書き | `docs/drafts/sns/` |
+| 週次リサーチ | `docs/research/` |
+| Instagram投稿予定・画像 | `マーケティング/Instagram/` |
+| X投稿コンテンツ | `マーケティング/X/` |
+| 画像生成スクリプト | `tools/generate_image.py` |
+| パーミッション設定 | `.claude/settings.json` |
